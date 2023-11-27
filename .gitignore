@@ -21,7 +21,6 @@ package-lock.json
 
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# dependencies
 /.pnp
 .pnp.js
 .yarn/install-state.gz
@@ -32,8 +31,9 @@ package-lock.json
 # next.js
 /.next/
 /out/
-.next
-out
+
+.next/
+out/
 
 # production
 /build
