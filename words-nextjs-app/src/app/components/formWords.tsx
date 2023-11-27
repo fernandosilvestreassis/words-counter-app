@@ -9,21 +9,18 @@ const FormWordsComponent: React.FC = () => {
   const [waiting, setWaiting] = useState<boolean>(false);
 
   const handleOkClick = async (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault(); // Evita a reinicialização da página
+    event.preventDefault(); 
 
     setWaiting(true);
 
     try {
-      // Envia a requisição para a API (substitua a URL pela sua API)
       const response = await axios.post('https://gqtqp9la97.execute-api.us-east-1.amazonaws.com/dev/getCountWords', {
         message: inputText,
       });
-      console.log(response)
-      // Atualiza o displayText com o resultado da API
+
       setDisplayText(response.data.message);
     } catch (error) {
-      // Trate erros de requisição aqui
-      console.error('Erro na requisição:', error);
+      console.error('Error Request:', error);
     } finally {
       setWaiting(false);
     }
